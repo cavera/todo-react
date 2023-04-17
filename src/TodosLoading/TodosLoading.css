@@ -1,0 +1,57 @@
+.LoadingTodo-container {
+	background-color: var(--color-item-bg);
+	color: var(--color-text);
+	position: relative;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 24px;
+	overflow: hidden;
+	border-radius: 10px;
+	transition: all 0.3s var(--transition-ease);
+	background: linear-gradient(90deg, var(--color-bg), var(--color-item-bg));
+	background-size: 400%;
+	animation: loadingAnimation 3s ease-in-out infinite;
+}
+
+@keyframes loadingAnimation {
+	0%,
+	100% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+.LoadingTodo-text {
+	margin: 0;
+	width: 100%;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+}
+
+.LoadingTodo-completeIcon,
+.LoadingTodo-deleteIcon {
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+	height: 48px;
+	width: 48px;
+	flex-shrink: 0;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: var(--color-bg);
+	opacity: 0.4;
+	transition: all 0.3s var(--transition-ease);
+}
+
+.LoadingTodo-completeIcon {
+	border-right: 1px solid var(--color-item-bg);
+}
+
+.LoadingTodo-deleteIcon {
+	border-left: 1px solid var(--color-item-bg);
+}

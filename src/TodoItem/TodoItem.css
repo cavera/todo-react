@@ -1,0 +1,64 @@
+.TodoItem {
+	background-color: var(--color-item-bg);
+	color: var(--color-text);
+	position: relative;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 24px;
+	box-shadow: 0px 10px 15px var(--color-sombra);
+	overflow: hidden;
+	border-radius: 10px;
+	transition: all 0.3s var(--transition-ease);
+}
+.TodoItem:hover .Icon {
+	opacity: 1;
+}
+
+.TodoItem--complete {
+	--color-sombra: rgba(32, 35, 41, 0.15);
+	box-shadow: 0px 3px 3px var(--color-sombra);
+}
+
+.TodoItem-p {
+	margin: 0;
+	width: 100%;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 400;
+}
+.TodoItem-p--complete {
+	text-decoration: line-through;
+}
+
+.Icon {
+	cursor: pointer;
+	display: grid;
+	place-items: center;
+	height: 48px;
+	width: 48px;
+	flex-shrink: 0;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: var(--color-bg);
+	opacity: 0.4;
+	transition: all 0.3s var(--transition-ease);
+}
+
+.Icon-check {
+	border-right: 1px solid var(--color-check);
+}
+.Icon-check--active {
+	background-color: var(--color-check);
+	color: var(--color-blanco);
+}
+
+.Icon-delete {
+	color: var(--color-delete);
+	border-left: 1px solid var(--color-delete);
+}
+.Icon-delete:hover {
+	background-color: var(--color-delete);
+	color: var(--color-blanco);
+}
