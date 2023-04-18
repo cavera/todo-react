@@ -1,16 +1,17 @@
 .TodoSearch {
-	background: #f9fbfc;
+	background: var(--color-item-bg);
 	border-radius: 2px;
 	border: 2px solid #202329;
-	margin: 0 24px;
+	margin: 0;
 	height: 64px;
-	width: calc(100% - 62px);
+	width: 100%;
 	font-size: 24px;
 	text-align: center;
 	font-family: "Montserrat";
 	font-weight: 400;
-	color: #1e1e1f;
-	box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+	color: var(--color-text);
+	box-shadow: 0px 5px 50px var(--color-sombra);
+	border-radius: 10px;
 }
 
 .TodoSearch::placeholder {
