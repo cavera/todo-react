@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./Modal.css";
 
 import { createPortal } from "react-dom";
