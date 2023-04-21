@@ -6,8 +6,8 @@
 	--color-delete: #db0037;
 	--color-item-bg: rgba(255, 255, 255, 0.2);
 	--color-text: rgb(15, 22, 32);
-	--color-sombra: rgba(19, 19, 19, 0.4);
-	--color-modal: rgba(0, 0, 0, 0.6);
+	--color-sombra: rgba(19, 19, 19, 0.2);
+	--color-modal: rgba(255, 255, 255, 0.6);
 	--transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 * {
@@ -34,11 +34,7 @@ body {
 		--color-bg: #1e1d24;
 		--color-check: #033a06;
 		--color-item-bg: rgba(255, 255, 255, 0.1);
-		/* 
-		--color-delete: #db0037;
-		--color-blanco: #fff;
-		--color-sombra: rgba(76, 175, 79, 0.2);
 		--color-modal: rgba(0, 0, 0, 0.6);
-		*/
+		--color-sombra: rgba(19, 19, 19, 0.4);
 	}
 }

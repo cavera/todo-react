@@ -28,13 +28,13 @@ function TodoForm({ addTodo, setOpenModal }) {
 			<div className='TodoForm-buttonContainer'>
 				<button
 					type='button'
-					className='TodoForm-button Todoform-button--cancel'
+					className='TodoForm-button TodoForm-button--cancel'
 					onClick={onCancel}>
 					Cancelar
 				</button>
 				<button
 					type='submit'
-					className='TodoForm-button Todoform-button--add'>
+					className='TodoForm-button TodoForm-button--add'>
 					Añadir
 				</button>
 			</div>
