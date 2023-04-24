@@ -16,7 +16,11 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { ChangeAlert } from "../ChangeAlert";
 
 function App() {
-	const { error, loading, searchedTodos, completeTodo, deleteTodo, openModal, setOpenModal, totalTodos, completedTodos, searchValue, setSearchValue, addTodo, syncronizeTodos } = useTodos();
+	const { states, stateUpdaters } = useTodos();
+
+	const { error, loading, totalTodos, completedTodos, searchValue, searchedTodos, openModal } = states;
+
+	const { setSearchValue, addTodo, completeTodo, deleteTodo, setOpenModal, syncronizeTodos } = stateUpdaters;
 
 	return (
 		<>
