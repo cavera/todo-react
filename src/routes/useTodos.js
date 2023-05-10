@@ -2,7 +2,7 @@ import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
 
 function useTodos() {
-	const { item: todos, saveItem: saveTodos, syncronizeItem: syncronizeTodos, loading, error } = useLocalStorage("TODOS_V1", []);
+	const { item: todos, saveItem: saveTodos, syncronizeItem: syncronizeTodos, loading, error } = useLocalStorage("TODOS_V2", []);
 
 	const [searchValue, setSearchValue] = React.useState("");
 	const [openModal, setOpenModal] = React.useState(false);
@@ -22,25 +22,27 @@ function useTodos() {
 		});
 	}
 
-	const completeTodo = (text) => {
-		const todoIndex = todos.findIndex((todo) => todo.text === text);
+	const completeTodo = (id) => {
+		const todoIndex = todos.findIndex((todo) => todo.id === id);
 		const newTodos = [...todos];
 		newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
 		saveTodos(newTodos);
 	};
 
-	const deleteTodo = (text) => {
-		const todoIndex = todos.findIndex((todo) => todo.text === text);
+	const deleteTodo = (id) => {
+		const todoIndex = todos.findIndex((todo) => todo.id === id);
 		const newTodos = [...todos];
 		newTodos.splice(todoIndex, 1);
 		saveTodos(newTodos);
 	};
 
 	const addTodo = (text) => {
+		const id = newTodoId(todos);
 		const newTodos = [...todos];
 		newTodos.push({
 			completed: false,
 			text: text,
+			id,
 		});
 		saveTodos(newTodos);
 	};
@@ -68,6 +70,15 @@ function useTodos() {
 		states,
 		stateUpdaters,
 	};
+}
+
+function newTodoId(todoList) {
+	if (!todoList.length) {
+		return 1;
+	}
+	const idList = todoList.map((todo) => todo.id);
+	const idMax = Math.max(...idList);
+	return idMax + 1;
 }
 
 export { useTodos };

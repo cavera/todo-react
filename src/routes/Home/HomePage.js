@@ -1,21 +1,21 @@
 // import "./App.css";
 import React from "react";
-import { useTodos } from "./useTodos";
-import { TodoHeader } from "../TodoHeader";
-import { TodoCounter } from "../TodoCounter";
-import { TodoSearch } from "../TodoSearch";
-import { TodoList } from "../TodoList";
-import { TodoItem } from "../TodoItem";
-import { TodosError } from "../TodosError";
-import { TodosLoading } from "../TodosLoading";
-import { EmptyTodos } from "../EmptyTodos";
-import { EmptySearchResults } from "../EmptySearchResults";
-import { Modal } from "../Modal";
-import { TodoForm } from "../TodoForm";
-import { CreateTodoButton } from "../CreateTodoButton";
-import { ChangeAlert } from "../ChangeAlert";
+import { useTodos } from "../useTodos";
+import { TodoHeader } from "../../ui/TodoHeader";
+import { TodoCounter } from "../../ui/TodoCounter";
+import { TodoSearch } from "../../ui/TodoSearch";
+import { TodoList } from "../../ui/TodoList";
+import { TodoItem } from "../../ui/TodoItem";
+import { TodosError } from "../../ui/TodosError";
+import { TodosLoading } from "../../ui/TodosLoading";
+import { EmptyTodos } from "../../ui/EmptyTodos";
+import { EmptySearchResults } from "../../ui/EmptySearchResults";
+import { Modal } from "../../ui/Modal";
+import { TodoForm } from "../../ui/TodoForm";
+import { CreateTodoButton } from "../../ui/CreateTodoButton";
+import { ChangeAlert } from "../../ui/ChangeAlert";
 
-function App() {
+function HomePage() {
 	const { states, stateUpdaters } = useTodos();
 
 	const { error, loading, totalTodos, completedTodos, searchValue, searchedTodos, openModal } = states;
@@ -48,21 +48,23 @@ function App() {
 				// Render prop
 				render={(todo) => (
 					<TodoItem
-						key={todo.text}
+						key={todo.id}
 						text={todo.text}
 						completed={todo.completed}
-						onComplete={() => completeTodo(todo.text)}
-						onDelete={() => deleteTodo(todo.text)}
+						onComplete={() => completeTodo(todo.id)}
+						onDelete={() => deleteTodo(todo.id)}
+						onEdit={() => console.log("edit")}
 					/>
 				)}>
 				{/* Render function */}
 				{(todo) => (
 					<TodoItem
-						key={todo.text}
+						key={todo.id}
 						text={todo.text}
 						completed={todo.completed}
-						onComplete={() => completeTodo(todo.text)}
-						onDelete={() => deleteTodo(todo.text)}
+						onComplete={() => completeTodo(todo.id)}
+						onDelete={() => deleteTodo(todo.id)}
+						onEdit={() => console.log("edit")}
 					/>
 				)}
 			</TodoList>
@@ -83,4 +85,4 @@ function App() {
 	);
 }
 
-export default App;
+export { HomePage };

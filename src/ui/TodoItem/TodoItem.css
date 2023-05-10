@@ -45,6 +45,10 @@
 	transition: all 0.3s var(--transition-ease);
 }
 
+.Icon-group {
+	display: flex;
+}
+
 .Icon-check {
 	border-right: 1px solid var(--color-check);
 }
@@ -60,4 +64,13 @@
 .Icon-delete:hover {
 	background-color: var(--color-delete);
 	color: var(--color-blanco);
+}
+.Icon-edit {
+	background-color: transparent;
+}
+.Icon-edit:hover {
+	color: var(--color-blanco);
+}
+.Icon-edit:hover svg {
+	transform: scale(1.1);
 }

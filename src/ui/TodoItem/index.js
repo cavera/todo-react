@@ -14,11 +14,18 @@ function TodoItem(props) {
 				<TodoIcon type='check' />
 			</span>
 			<p className={paragraphClass}>{props.text}</p>
-			<span
-				className='Icon Icon-delete'
-				onClick={props.onDelete}>
-				<TodoIcon type='delete' />
-			</span>
+			<div className='Icon-group'>
+				<span
+					className='Icon Icon-edit'
+					onClick={props.onEdit}>
+					<TodoIcon type='edit' />
+				</span>
+				<span
+					className='Icon Icon-delete'
+					onClick={props.onDelete}>
+					<TodoIcon type='delete' />
+				</span>
+			</div>
 		</li>
 	);
 }
