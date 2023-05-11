@@ -11,8 +11,6 @@ import { TodosError } from "../../ui/TodosError";
 import { TodosLoading } from "../../ui/TodosLoading";
 import { EmptyTodos } from "../../ui/EmptyTodos";
 import { EmptySearchResults } from "../../ui/EmptySearchResults";
-import { Modal } from "../../ui/Modal";
-import { TodoForm } from "../../ui/TodoForm";
 import { CreateTodoButton } from "../../ui/CreateTodoButton";
 import { ChangeAlert } from "../../ui/ChangeAlert";
 
@@ -20,24 +18,9 @@ function HomePage() {
 	const navigate = useNavigate();
 	const { states, stateUpdaters } = useTodos();
 
-	const {
-		error,
-		loading,
-		totalTodos,
-		completedTodos,
-		searchValue,
-		searchedTodos,
-		//  openModal
-	} = states;
+	const { error, loading, totalTodos, completedTodos, searchValue, searchedTodos } = states;
 
-	const {
-		setSearchValue,
-		// addTodo,
-		completeTodo,
-		deleteTodo,
-		// setOpenModal,
-		syncronizeTodos,
-	} = stateUpdaters;
+	const { setSearchValue, completeTodo, deleteTodo, syncronizeTodos } = stateUpdaters;
 
 	return (
 		<>
@@ -70,7 +53,11 @@ function HomePage() {
 						completed={todo.completed}
 						onComplete={() => completeTodo(todo.id)}
 						onDelete={() => deleteTodo(todo.id)}
-						onEdit={() => navigate(`/edit/${todo.id}`)}
+						onEdit={() =>
+							navigate(`/edit/${todo.id}`, {
+								state: { todo },
+							})
+						}
 					/>
 				)}>
 				{/* Render function */}
