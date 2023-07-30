@@ -18,13 +18,15 @@ body {
 	padding: 0;
 	background: var(--color-bg);
 	color: var(--color-text);
-	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 #root {
-	margin: 0 24px;
+	margin: 0 auto;
 	position: relative;
 	min-height: 100vh;
+	width: 100%;
+	max-width: 600px;
 }
 
 @media (prefers-color-scheme: dark) {
